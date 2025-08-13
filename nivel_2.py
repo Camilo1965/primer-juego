@@ -203,7 +203,7 @@ pygame.time.set_timer(enemy_angel_animation_timer,300)
 while True: 
     
     for event in pygame.event.get():
-        #sound.play()
+        sound.play()
         #pygame.QUIT = cerrar la ventana
         if event.type == pygame.QUIT:
             pygame.quit()

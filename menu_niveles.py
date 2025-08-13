@@ -16,10 +16,10 @@ WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 
 # Fuentes
-test_font = pygame.font.Font('fuente/Bad_Boys.ttf',80)
+test_font = pygame.font.Font('primer-juego/fuente/Bad_Boys.ttf',80)
 
 
-background = pygame.image.load('fondo/muerte_final.jpg').convert_alpha()
+background = pygame.image.load('primer-juego/fondo/muerte_final.jpg').convert_alpha()
 
 
 def draw_text(text, test_font, color, x, y):

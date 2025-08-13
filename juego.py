@@ -49,18 +49,18 @@ def player_animation():
 
 #musica
 pygame.mixer.init()
-sound = pygame.mixer.Sound('musica/lies.mp3')
+sound = pygame.mixer.Sound('primer-juego/musica/lies.mp3')
 sound.set_volume(0.1)
 
 
 #logo
-pygame.display.set_icon(pygame.image.load('icono/berserk.png'))
+pygame.display.set_icon(pygame.image.load('primer-juego/icono/berserk.png'))
 
 
 pygame.init()
 
 # Crear la ventana del juego 
-screen = pygame.display.set_mode((1920,600))
+screen = pygame.display.set_mode((1480,900))
 
 # Titulo del juego
 pygame.display.set_caption("Berserker")
@@ -72,31 +72,31 @@ clock = pygame.time.Clock()
 game_active = True
 
 #Fuentes 
-test_font = pygame.font.Font('fuente/Bad_Boys.ttf',80)
+test_font = pygame.font.Font('primer-juego/fuente/Bad_Boys.ttf',80)
 
 #puntuacion 
 score = 0
 
 
 #background
-sky_surface = pygame.image.load('fondo/background.png').convert_alpha()
-ground_surface = pygame.image.load('fondo/graveyard.png').convert_alpha()
-ground_surface2 = pygame.image.load('fondo/graveyard.png').convert_alpha()
-ground_surface3 = pygame.image.load('fondo/graveyard.png').convert_alpha()
-ground_surface4 = pygame.image.load('fondo/graveyard.png').convert_alpha()
-ground_surface5 = pygame.image.load('fondo/graveyard.png').convert_alpha()
-ground_surface6 = pygame.image.load('fondo/graveyard.png').convert_alpha()
-#dead_surface = pygame.image.load('fondo/muerte.png').convert_alpha()
-dead_surface = pygame.image.load('fondo/muerte2.jpg').convert_alpha()
+sky_surface = pygame.image.load('primer-juego/fondo/background.png').convert_alpha()
+ground_surface = pygame.image.load('primer-juego/fondo/graveyard.png').convert_alpha()
+ground_surface2 = pygame.image.load('primer-juego/fondo/graveyard.png').convert_alpha()
+ground_surface3 = pygame.image.load('primer-juego/fondo/graveyard.png').convert_alpha()
+ground_surface4 = pygame.image.load('primer-juego/fondo/graveyard.png').convert_alpha()
+ground_surface5 = pygame.image.load('primer-juego/fondo/graveyard.png').convert_alpha()
+ground_surface6 = pygame.image.load('primer-juego/fondo/graveyard.png').convert_alpha()
+#dead_surface = pygame.image.load('primer-juego/fondo/muerte.png').convert_alpha()
+dead_surface = pygame.image.load('primer-juego/fondo/muerte2.jpg').convert_alpha()
 
 
 
 
 #enemigo lobo
-enemy_frame = pygame.image.load('enemigos/hell-gato/hell-gato-1.png').convert_alpha()
-enemy_frame2 = pygame.image.load('enemigos/hell-gato/hell-gato-2.png').convert_alpha()
-enemy_frame3 = pygame.image.load('enemigos/hell-gato/hell-gato-3.png').convert_alpha()
-enemy_frame4 = pygame.image.load('enemigos/hell-gato/hell-gato-4.png').convert_alpha()
+enemy_frame = pygame.image.load('primer-juego/enemigos/hell-gato/hell-gato-1.png').convert_alpha()
+enemy_frame2 = pygame.image.load('primer-juego/enemigos/hell-gato/hell-gato-2.png').convert_alpha()
+enemy_frame3 = pygame.image.load('primer-juego/enemigos/hell-gato/hell-gato-3.png').convert_alpha()
+enemy_frame4 = pygame.image.load('primer-juego/enemigos/hell-gato/hell-gato-4.png').convert_alpha()
 enemy_frames = [enemy_frame,enemy_frame2,enemy_frame3,enemy_frame4]
 enemy_frame_index = 0
 enemy_surface = enemy_frames[enemy_frame_index]
@@ -110,14 +110,14 @@ enemy_frames = [pygame.transform.scale(img, (img.get_width() * escala, img.get_h
 
 
 #enemigo angel
-enemy_frame_angel = pygame.image.load('angel/angel1.png').convert_alpha()
-enemy_frame_angel_2 = pygame.image.load("angel/angel2.png").convert_alpha()
-enemy_frame_angel_3= pygame.image.load('angel/angel3.png').convert_alpha()
-enemy_frame_angel_4 = pygame.image.load("angel/angel4.png").convert_alpha()
-enemy_frame_angel_5 = pygame.image.load('angel/angel5.png').convert_alpha()
-enemy_frame_angel_6 = pygame.image.load("angel/angel6.png").convert_alpha()
-enemy_frame_angel_7 = pygame.image.load('angel/angel7.png').convert_alpha()
-enemy_frame_angel_8 = pygame.image.load("angel/angel8.png").convert_alpha()
+enemy_frame_angel = pygame.image.load('primer-juego/angel/angel1.png').convert_alpha()
+enemy_frame_angel_2 = pygame.image.load("primer-juego/angel/angel2.png").convert_alpha()
+enemy_frame_angel_3= pygame.image.load('primer-juego/angel/angel3.png').convert_alpha()
+enemy_frame_angel_4 = pygame.image.load("primer-juego/angel/angel4.png").convert_alpha()
+enemy_frame_angel_5 = pygame.image.load('primer-juego/angel/angel5.png').convert_alpha()
+enemy_frame_angel_6 = pygame.image.load("primer-juego/angel/angel6.png").convert_alpha()
+enemy_frame_angel_7 = pygame.image.load('primer-juego/angel/angel7.png').convert_alpha()
+enemy_frame_angel_8 = pygame.image.load("primer-juego/angel/angel8.png").convert_alpha()
 enemy_angel_frames = [enemy_frame_angel,enemy_frame_angel_2,enemy_frame_angel_3,enemy_frame_angel_4,enemy_frame_angel_5,enemy_frame_angel_6,enemy_frame_angel_7,enemy_frame_angel_8]
 enemy_frame_2_index = 0
 enemy_surface2 = enemy_angel_frames[enemy_frame_2_index]
@@ -130,7 +130,7 @@ enemy_angel_frames = [pygame.transform.scale(img, (img.get_width() * escala, img
 
 
 
-#lista de enemigos
+#lista de primer-juego/enemigos
 obstacle_rect_list = []
 
 
@@ -139,22 +139,22 @@ score_rect = score_surface.get_rect(midbottom = (960,100))
 
 
 #jugador 
-player_walk_1 = pygame.image.load('hero/hero-run/hero-run-1.png').convert_alpha()
-player_walk_2 = pygame.image.load('hero/hero-run/hero-run-2.png').convert_alpha()
-player_walk_3 = pygame.image.load('hero/hero-run/hero-run-3.png').convert_alpha()
-player_walk_4 = pygame.image.load('hero/hero-run/hero-run-4.png').convert_alpha()
-player_walk_5 = pygame.image.load('hero/hero-run/hero-run-5.png').convert_alpha()
-player_walk_6 = pygame.image.load('hero/hero-run/hero-run-6.png').convert_alpha()
+player_walk_1 = pygame.image.load('primer-juego/hero/hero-run/hero-run-1.png').convert_alpha()
+player_walk_2 = pygame.image.load('primer-juego/hero/hero-run/hero-run-2.png').convert_alpha()
+player_walk_3 = pygame.image.load('primer-juego/hero/hero-run/hero-run-3.png').convert_alpha()
+player_walk_4 = pygame.image.load('primer-juego/hero/hero-run/hero-run-4.png').convert_alpha()
+player_walk_5 = pygame.image.load('primer-juego/hero/hero-run/hero-run-5.png').convert_alpha()
+player_walk_6 = pygame.image.load('primer-juego/hero/hero-run/hero-run-6.png').convert_alpha()
 player_walk = [player_walk_2,player_walk_2,player_walk_3,player_walk_4,player_walk_5,player_walk_6]
 player_index = 0
-player_jump1 = pygame.image.load('hero/hero-jump/hero-jump-1.png').convert_alpha()
-player_jump2 = pygame.image.load('hero/hero-jump/hero-jump-2.png').convert_alpha()
-player_jump3 = pygame.image.load('hero/hero-jump/hero-jump-3.png').convert_alpha()
+player_jump1 = pygame.image.load('primer-juego/hero/hero-jump/hero-jump-1.png').convert_alpha()
+player_jump2 = pygame.image.load('primer-juego/hero/hero-jump/hero-jump-2.png').convert_alpha()
+player_jump3 = pygame.image.load('primer-juego/hero/hero-jump/hero-jump-3.png').convert_alpha()
 player_jump = [player_jump1,player_jump2,player_jump3]
 player_jump_index = 0
 player_surface = player_walk[player_index]
 player_rect = player_surface.get_rect(midbottom = (100,491))
-player_stand = pygame.image.load('angel/angel5.png').convert_alpha()
+player_stand = pygame.image.load('primer-juego/angel/angel5.png').convert_alpha()
 
 # Escalar la imagen del personaje
 escala = 3
